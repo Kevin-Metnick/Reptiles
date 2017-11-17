@@ -13,7 +13,6 @@ if (php_sapi_name()==='cli') {
  }
 
 // // 记录 采集出的结果
-// // $Result = Curl::url('http://www.47nvnv.com/list/13.html')->match(['img'=>'src'])->get();
 $Result = Curl::url('http://699pic.com/?sem=1')->match(["img"=>"/<img.*?data-original=[\"|'](.*?)[\"|']/"])->get();
 $address = RESULT.'/'.$Result['domain'];
 if (!file_exists($address)) {
